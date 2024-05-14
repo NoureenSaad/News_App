@@ -40,7 +40,7 @@ class AppTheme{
         color: ColorsManager.categoryListColor
       ),
       titleSmall: TextStyle(
-        fontSize: 22,
+        fontSize: 20,
         fontWeight: FontWeight.w400,
         color: Colors.white
       )

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/presentation/home/widgets/home_drawer_widget.dart';
+import '../../data/model/category_model.dart';
 import '../categories/categories_widget.dart';
+import '../categories/category_details.dart';
 import '../settings/settings_widget.dart';
 
 
@@ -17,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    selectedWidget = CategoriesWidget();
+    selectedWidget = CategoriesWidget(categoryClick: onCategoryItemClick,);
   }
   late Widget selectedWidget;
 
@@ -40,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void onMenuItemClicked(MenuItems item){
     switch(item){
       case MenuItems.Categories:{
-        selectedWidget = CategoriesWidget();
+        selectedWidget = CategoriesWidget(categoryClick: onCategoryItemClick,);
         Navigator.of(context).pop();
         setState(() {
 
@@ -55,5 +57,11 @@ class _HomeScreenState extends State<HomeScreen> {
         });
       }
     }
+  }
+  void onCategoryItemClick(CategoryModel categoryModel){
+    selectedWidget = CategoryDetails(categoryModel: categoryModel,);
+    setState(() {
+
+    });
   }
 }

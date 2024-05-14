@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:news_app/presentation/categories/category_details.dart';
 import 'package:news_app/presentation/categories/single_category_widget.dart';
 
 import '../../data/model/category_model.dart';
 
-
+typedef onCategoryClick = void Function(CategoryModel categoryModel);
 class CategoriesWidget extends StatelessWidget {
+  onCategoryClick categoryClick;
   List<CategoryModel> categoriesList = CategoryModel.getCategories();
-  CategoriesWidget({super.key});
+  CategoriesWidget({super.key,required this.categoryClick});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,9 @@ class CategoriesWidget extends StatelessWidget {
                 ),
                 itemCount: categoriesList.length,
                 itemBuilder: (context,index)=>InkWell(
-                  onTap: (){},
+                  onTap: (){
+                    categoryClick(categoriesList[index]);
+                  },
                   child: SingleCategoryWidget(
                     index: index,
                     category: categoriesList[index],

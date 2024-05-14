@@ -24,7 +24,7 @@ class SingleCategoryWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Image.asset(category.imagePath,height: (height*0.13).h,fit: BoxFit.fitHeight,),
+          Image.asset(category.imagePath,height: (height*0.10).h,fit: BoxFit.fitHeight,),
           Text(category.title,style: Theme.of(context).textTheme.titleSmall,),
         ],
       ),

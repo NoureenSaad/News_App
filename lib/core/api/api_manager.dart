@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
-
+import 'package:injectable/injectable.dart';
 import '../constants.dart';
 
+@singleton
 class ApiManager {
   static late Dio dio;
 
