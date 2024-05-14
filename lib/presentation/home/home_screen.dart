@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/ui/categories/categories_widget.dart';
-import 'package:news_app/ui/home/widgets/home_drawer_widget.dart';
-import 'package:news_app/ui/settings/settings_widget.dart';
+import 'package:news_app/presentation/home/widgets/home_drawer_widget.dart';
+import '../categories/categories_widget.dart';
+import '../settings/settings_widget.dart';
+
 
 class HomeScreen extends StatefulWidget {
   static const String route = "HomeScreen";
@@ -15,7 +16,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     selectedWidget = CategoriesWidget();
   }
@@ -24,12 +24,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(image: AssetImage("assets/images/background.jpg"),fit: BoxFit.cover),
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: Text("News App"),
+          title: const Text("News App"),
         ),
         drawer: HomeDrawerWidget(onItemMenuClicked: onMenuItemClicked,),
         body: selectedWidget,

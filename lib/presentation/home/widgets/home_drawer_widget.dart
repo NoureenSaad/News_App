@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/shared/style/app_colors.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:news_app/core/utils/colors_manager.dart';
 
 typedef onItemClicked = void Function (MenuItems item);
 class HomeDrawerWidget extends StatelessWidget {
@@ -13,22 +14,22 @@ class HomeDrawerWidget extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
-            height: 120,
+            height: 120.h,
             color: Theme.of(context).colorScheme.primary,
             alignment: Alignment.center,
             child: Text("News App!",style: Theme.of(context).textTheme.titleMedium,),
           ),
-          SizedBox(height: 15,),
+          SizedBox(height: 15.h,),
           TextButton(
             onPressed: (){
               onItemMenuClicked(MenuItems.Categories);
             },
             child: Row(
               children: [
-                Icon(Icons.list,color: AppColors.drawerIconsColor,size: 28,),
-                SizedBox(width: 10,),
+                Icon(Icons.list,color: ColorsManager.drawerIconsColor,size: 28.sp,),
+                SizedBox(width: 10.w,),
                 Text("Categories",style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: AppColors.drawerIconsColor
+                  color: ColorsManager.drawerIconsColor
                 ),)
               ],
             )
@@ -39,10 +40,10 @@ class HomeDrawerWidget extends StatelessWidget {
               },
               child: Row(
                 children: [
-                  Icon(Icons.settings,color: AppColors.drawerIconsColor,size: 28,),
-                  SizedBox(width: 10,),
+                  Icon(Icons.settings,color: ColorsManager.drawerIconsColor,size: 28.sp,),
+                  SizedBox(width: 10.w,),
                   Text("Settings",style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: AppColors.drawerIconsColor
+                      color: ColorsManager.drawerIconsColor
                   ),)
                 ],
               )

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/shared/style/app_colors.dart';
+import 'package:news_app/core/utils/colors_manager.dart';
 
 class AppTheme{
   static ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.transparent,
     colorScheme: ColorScheme.fromSeed(
-        seedColor: AppColors.lightPrimaryColor,
-        primary: AppColors.lightPrimaryColor
+        seedColor: ColorsManager.lightPrimaryColor,
+        primary: ColorsManager.lightPrimaryColor
     ),
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       toolbarHeight: 80,
       centerTitle: true,
-      backgroundColor: AppColors.lightPrimaryColor,
+      backgroundColor: ColorsManager.lightPrimaryColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(50),
@@ -28,7 +28,7 @@ class AppTheme{
         color: Colors.white
       )
     ),
-    textTheme: TextTheme(
+    textTheme: const TextTheme(
       titleMedium: TextStyle(
         fontSize: 24,
         fontWeight: FontWeight.w700,
@@ -37,7 +37,7 @@ class AppTheme{
       labelMedium: TextStyle(
         fontWeight: FontWeight.w700,
         fontSize: 28,
-        color: AppColors.categoryListColor
+        color: ColorsManager.categoryListColor
       ),
       titleSmall: TextStyle(
         fontSize: 22,

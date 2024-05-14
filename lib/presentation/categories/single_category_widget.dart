@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/model/category_model.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../data/model/category_model.dart';
 
 class SingleCategoryWidget extends StatelessWidget {
   CategoryModel category;
@@ -12,10 +13,10 @@ class SingleCategoryWidget extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(25),
-          topRight: Radius.circular(25),
-          bottomRight: index%2==0?Radius.circular(25):Radius.circular(0),
-          bottomLeft: index%2==0?Radius.circular(0):Radius.circular(25),
+          topLeft: Radius.circular(25.r),
+          topRight: Radius.circular(25.r),
+          bottomRight: index%2==0?Radius.circular(25.r):Radius.circular(0.r),
+          bottomLeft: index%2==0?Radius.circular(0.r):Radius.circular(25.r),
         ),
         color: category.color,
       ),
@@ -23,7 +24,7 @@ class SingleCategoryWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Image.asset(category.imagePath,height: height*0.13,fit: BoxFit.fitHeight,),
+          Image.asset(category.imagePath,height: (height*0.13).h,fit: BoxFit.fitHeight,),
           Text(category.title,style: Theme.of(context).textTheme.titleSmall,),
         ],
       ),
